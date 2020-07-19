@@ -3,7 +3,7 @@ import { Redirect } from 'react-router-dom';
 
 const Home = () => {
     
-    return <Redirect to="/sign-in" />
+    return <Redirect to="/log-in" />
 
 };
 
