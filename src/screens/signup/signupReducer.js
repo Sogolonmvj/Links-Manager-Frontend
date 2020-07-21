@@ -11,7 +11,7 @@ export default function(state = initialState, action) {
         case SIGN_UP:
             const response = payload ? payload.data : null;
             const account = response ? response.data : null;
-            const metadata = payload ? payload.metadata : null;
+            const metadata = response ? response.metadata : null;
 
             const token = metadata ? metadata.token : null;
             const refreshToken = metadata ? metadata.refreshToken : null;
@@ -24,7 +24,7 @@ export default function(state = initialState, action) {
             // console.log('*** SignUpReducer.token', token);
             // console.log('*** SignUpReducer.refreshToken', refreshToken);
 
-            return { ...initialState, account: account };
+            return { ...initialState, account };
         default:
             return state;
     };

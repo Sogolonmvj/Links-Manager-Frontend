@@ -1,16 +1,22 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { logIn } from './loginActions';
 
 const LogIn = (props) => {
-    const { logIn } = props;
+    const { logIn, account } = props;
 
     const submitHandler = (e) => {
         e.preventDefault();
-        
-        logIn({ email: 'sogolonmd@gmail.com', password: 'sha256' });
-    }
+
+        const formData = new FormData(e.target);
+        const data = Object.fromEntries(formData);
+        logIn(data);
+    };
+
+    if (account) {
+        return <Redirect to="/manage/links" />;
+    };
 
     // console.log('*** LogIn.account', account);
 
@@ -21,11 +27,11 @@ const LogIn = (props) => {
                 <form onSubmit={ submitHandler }>
                     <div className="form-group">
                         <label>Email</label>
-                        <input type="text" className="form-control" />
+                        <input type="text" className="form-control" name="email" />
                     </div>
                     <div className="form-group">
                         <label>Password</label>
-                        <input type="text" className="form-control" />
+                        <input type="password" className="form-control" name="password" />
                     </div>
                     <div>
                         <button className="btn btn-primary btn-round">Submit</button>
@@ -44,4 +50,4 @@ const mapStateToProps = (state) => {
     return { account: state.logIn.account };
 };
 
-export default connect(mapStateToProps, {logIn})(LogIn);
+export default connect(mapStateToProps, { logIn })(LogIn);
