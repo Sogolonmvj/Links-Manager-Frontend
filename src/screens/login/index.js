@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { logIn } from './loginActions';
 
 const LogIn = (props) => {
-    const { account, logIn } = props;
+    const { logIn } = props;
 
     const submitHandler = (e) => {
         e.preventDefault();
@@ -12,7 +12,7 @@ const LogIn = (props) => {
         logIn({ email: 'sogolonmd@gmail.com', password: 'sha256' });
     }
 
-    console.log('*** LogIn.account', account);
+    // console.log('*** LogIn.account', account);
 
     return (
         <div className="container h-100 pt-5">
