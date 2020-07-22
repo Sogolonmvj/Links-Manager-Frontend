@@ -26,12 +26,13 @@ export default function(state = initialState, action) {
             // console.log('*** SignUpReducer.refreshToken', refreshToken);
 
             return { ...state, account };
-        case LOG_OUT: {
+
+        case LOG_OUT: 
             removeAccount();
             removeToken();
             removeRefreshToken();
             return { ...initialState, account: null };
-        };
+        
         default:
             return state;
     };

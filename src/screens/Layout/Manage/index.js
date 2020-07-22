@@ -25,7 +25,7 @@ const Layout = ({ children, logOut, account }) => {
                         <strong>Links</strong>
                     </div>
                     <div>
-                        <button className="btn btn-clear" onClick={ logOutHandler }></button> <span>Exit</span>
+                        <button className="btn btn-clear" onClick={ logOutHandler }>Exit</button>
                     </div>
                 </div>
             </nav>

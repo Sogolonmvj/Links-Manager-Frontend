@@ -8,7 +8,7 @@ const defaultOptions = {
 
 export const getCookie = (name, options = {}) => {
     if(!name) return null;
-    return cookie.get(...defaultOptions, ...options);
+    return cookie.get (name, {...defaultOptions, ...options}) ;
 };
 
 export const setCookie = (name, value, options = {}) => {
