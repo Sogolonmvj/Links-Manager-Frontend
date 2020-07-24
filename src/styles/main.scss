@@ -1,7 +1,6 @@
 @import 'node_modules/bootstrap/scss/bootstrap.scss';
 @import './now-ui-kit.scss';
 
-
 .btn-clear {
     background: none;
     color: inherit;
@@ -16,4 +15,8 @@
         background: none;
         box-shadow: none;
     }
+}
+
+.border-transparent {
+    border-color: rgba(0, 0, 0, 0) !important;
 }
