@@ -11,12 +11,12 @@ const FormCheck = (props) => {
 
     const handleChange = (e) => {
         if(isChecked === e.target.checked) return;
-        setIsChecked(!!e.target.value);
+        setIsChecked(!!e.target.checked);
     };
 
     const inputProps = {
         type: 'checkbox',
-        name: { name },
+        name,
         checked: !!isChecked,
         onChange: handleChange,  
     };

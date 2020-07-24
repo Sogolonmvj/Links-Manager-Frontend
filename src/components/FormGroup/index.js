@@ -7,7 +7,7 @@ const FormGroup = (props) => {
     useEffect(() => {
         const initialvalue = data && data[name] ? data[name] : undefined;
         if(initialvalue !== undefined) setValue(initialvalue);
-    },[name,data]);
+    }, [name,data]);
 
     const handleChange = (e) => {
         if(value === e.target.value) return;
@@ -15,8 +15,8 @@ const FormGroup = (props) => {
     };
 
     const inputProps = {
-        type: { type },
-        name: { name },
+        type,
+        name,
         value: value || '',
         onChange: handleChange,  
     };
