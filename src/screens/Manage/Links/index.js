@@ -12,7 +12,7 @@ const Links = ( { links, linkRemove, linkToRemove, linkList, setLinkToRemove } )
         linkList()
     }, [linkList]);
 
-    const cancelDelete = (e) => setLinkToRemove();
+    const cancelDelete = (e) => setLinkToRemove(null);
     const confirmDelete = (e) => (linkToRemove ? linkRemove(linkToRemove) : null);
 
     return (
