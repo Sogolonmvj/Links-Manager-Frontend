@@ -1,9 +1,10 @@
-import { apiPost } from '../helpers/api';
+import { apiPost, apiRefreshToken } from '../helpers/api';
 
 export const SIGN_UP = 'SIGN_UP';
 export const LOG_IN = 'LOG_IN';
 export const LOG_OUT = 'LOG_OUT';
 export const INIT_ACCOUNT = 'INIT_ACCOUNT';
+export const REFRESH_TOKEN = 'REFRESH_TOKEN';
 
 export const signUp = (data) => {
     
@@ -24,4 +25,9 @@ export const logOut = () => {
 
 export const initAccount =() => {
     return { type: INIT_ACCOUNT, payload: {} };
+};
+
+export const getFreshToken = () => { 
+    const payload = apiRefreshToken();
+    return { type: REFRESH_TOKEN, payload };
 };

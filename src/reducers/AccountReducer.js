@@ -1,5 +1,5 @@
 import { setAccount, setToken, setRefreshToken, removeAccount, removeToken, removeRefreshToken, getAccount } from '../helpers/account';
-import { SIGN_UP, LOG_IN, LOG_OUT, INIT_ACCOUNT } from '../actions/AccountActions';
+import { SIGN_UP, LOG_IN, LOG_OUT, INIT_ACCOUNT, REFRESH_TOKEN } from '../actions/AccountActions';
 
 const initialState = {
     account: null,
@@ -36,6 +36,16 @@ export default function(state = initialState, action) {
         case INIT_ACCOUNT: {
             const account = getAccount();
             return {...state, account};
+        }
+
+        case REFRESH_TOKEN: {
+            const response = payload ? payload.data : null;
+            const metadata = response ? response.metadata : null;
+            console.log('*** AccountReducer.REFRESH_TOKEN.metada', metadata)
+            const token = metadata ? metadata.token : null;
+            if (token) setToken(token);
+            return state;
+
         }
 
         default:
