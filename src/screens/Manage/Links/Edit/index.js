@@ -6,7 +6,7 @@ import { getFormData } from '../../../../helpers/form';
 import { connect } from 'react-redux';
 import FormGroup from '../../../../components/FormGroup';
 import FormCheck from '../../../../components/FormCheck';
-
+import { Redirect } from 'react-router-dom';
 
 const Edit = ({ link, linkGet, linkUpdate }) => {
 
@@ -22,6 +22,10 @@ const Edit = ({ link, linkGet, linkUpdate }) => {
        linkUpdate(id, data);
    };
 
+   if (link) {
+        return <Redirect to="/manage/links" />;
+    }; 
+
     return (
         <Layout>
             <h1>Edit Link</h1>
@@ -33,7 +37,7 @@ const Edit = ({ link, linkGet, linkUpdate }) => {
                         <div>
                             <button className="btn btn-primary btn-round">Submit</button>
                         </div> 
-                    </form>
+                    </form>                   
             </div>
         </Layout>
     );

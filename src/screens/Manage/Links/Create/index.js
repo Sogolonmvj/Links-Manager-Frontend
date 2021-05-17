@@ -15,7 +15,7 @@ const Create = ( { link, linkCreate } ) => {
 
     if (link) {
         return <Redirect to="/manage/links" />;
-    }
+    } 
 
     console.log('*** Create.link', link);
 
@@ -23,7 +23,7 @@ const Create = ( { link, linkCreate } ) => {
         <Layout>
             <h1>Create Link</h1>
             <div>
-                    <form onSubmit={submitHandler}>
+                    <form onSubmit={ submitHandler }>
                         <div className="form-group">
                             <label>Label</label>
                             <input type="text" className="form-control" name="label" />
