@@ -1,7 +1,5 @@
 import axios from 'axios';
 import { getToken, getRefreshToken } from './account';
-// import { secondsToReadableTime } from './datetime';
-// import { getTokenExpire } from './jwt';
 
 export const getApiUrl = (path) => {
     return `http://localhost:3001${path}`;
@@ -10,7 +8,6 @@ export const getApiUrl = (path) => {
 export const getHeaders = () => {
     const token = getToken();
 
-    // console.log('*** getHeaders.token', token);
     if(!token) return {};
 
     return {

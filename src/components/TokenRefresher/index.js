@@ -15,15 +15,10 @@ const TokenRefresher = ( { getFreshToken } ) => {
     };
 
     useEffect(() => {
-        // getFreshToken();
         const secondsToExpire = calculate() - TRESHOLD;
-        // const readableTime = secondsToReadableTime(secondsToExpire);
-        // console.log('*** TokenRefresher.readableTime', readableTime);
         const id = setTimeout(getFreshToken, secondsToExpire * 1000);
         return () => clearTimeout(id);       
     }, [getFreshToken]);
-
-    // setInterval(calculate, 1000);
 
     return null;
 };

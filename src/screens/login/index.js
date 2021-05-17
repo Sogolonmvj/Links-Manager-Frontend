@@ -18,8 +18,6 @@ const LogIn = (props) => {
         return <Redirect to="/manage/links" />;
     };
 
-    // console.log('*** LogIn.account', account);
-
     return (
         <div className="container h-100 pt-5">
             <h1>Log In</h1>

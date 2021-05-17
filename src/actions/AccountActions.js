@@ -9,13 +9,11 @@ export const REFRESH_TOKEN = 'REFRESH_TOKEN';
 export const signUp = (data) => {
     
     const payload = apiPost('/auth/sign-up', data);
-    // does requisition in API
     return { type: SIGN_UP, payload };
 };
 
 export const logIn = (data) => {
     const payload = apiPost('/auth/log-in', data);
-    // does requisition in API
     return { type: LOG_IN, payload };
 };
 

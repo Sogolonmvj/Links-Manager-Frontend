@@ -21,10 +21,6 @@ export default function(state = initialState, action) {
             if (token) setToken(token);
             if (refreshToken) setRefreshToken(refreshToken);
 
-            // console.log('*** SignUpReducer.account', account);
-            // console.log('*** SignUpReducer.token', token);
-            // console.log('*** SignUpReducer.refreshToken', refreshToken);
-
             return { ...state, account };
 
         case LOG_OUT: 
@@ -41,7 +37,6 @@ export default function(state = initialState, action) {
         case REFRESH_TOKEN: {
             const response = payload ? payload.data : null;
             const metadata = response ? response.metadata : null;
-            console.log('*** AccountReducer.REFRESH_TOKEN.metada', metadata)
             const token = metadata ? metadata.token : null;
             if (token) setToken(token);
             return state;

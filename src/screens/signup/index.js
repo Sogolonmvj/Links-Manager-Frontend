@@ -10,7 +10,6 @@ const SignUp = (props) => {
         e.preventDefault();
         const data = getFormData(e);
 
-        // console.log('*** SignUp.submitHandler.data', data);
         signUp(data)
     };
 
